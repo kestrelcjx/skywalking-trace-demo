@@ -1,0 +1,22 @@
+server:
+  port: 7890
+
+spring:
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      password: 
+      database: 0
+      timeout: 60000
+      jedis:
+        pool:
+          max_active: 8
+          max_idle: 8
+          min_idle: 0
+          max-wait: -1
+  kafka:
+    bootstrap-servers:
+      - 127.0.0.1:9092
+    consumer:
+      group-id: skywalking.trace.demo
