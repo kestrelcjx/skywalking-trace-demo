@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import cn.easyops.demo.utils.utils;
+
 import org.springframework.kafka.core.KafkaTemplate;
 
 @RestController
@@ -25,5 +28,10 @@ public class UserController {
         kafkaTemplate.send(record);
 
         return mobile;
+    }
+
+    @RequestMapping(value = "/user/throwException", method = RequestMethod.GET)
+    public void throwException() throws Exception {
+        utils.throwException();
     }
 }
